@@ -242,11 +242,14 @@ client.on("message", async message => {
     order = [];
     counter++;
     questionNumber = shufflelist[counter];
+    
     setTimeout(function(){
-      gameStage = "question";
       if (counter >= totalround/2){
         ranking(message);
       }
+    }, 1000);
+    setTimeout(function(){
+      gameStage = "question";
       if (counter < totalround){
         start(message);
       }
